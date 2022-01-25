@@ -2,219 +2,148 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>SuperDog Events: A Coding Challenge</title>
+    <title>SuperDog Events: Coding Challenge by Mark Spectre</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
-    <!-- font awesome link (coder foundry's) -->
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
+    <!--Prisim-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-twilight.min.css"
+        integrity="sha512-akb4nfKzpmhujLUyollw5waBPeohuVf0Z5+cL+4Ngc4Db+V8szzx6ZTujguFjpmD076W8LImVIbOblmQ+vZMKA=="
+        crossorigin="anonymous" />
 
-    <!-- custom css OUR CSS IS LISTED AFTER THE BOOTSTRAP LINK SO OUR'S WILL OVVERIDE...OR CAN JUST USE !IMPORTAANT KEYWORD INDIVIDUALLY-->
-    <link rel="stylesheet" href="/css/site.css">
-    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+    <link href="css/site.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" />
+
 </head>
 
 <body class="d-flex flex-column h-100">
-
-    <nav class="navbar navbar-expand-md fixed-top navbarBG navbar-dark">
+    <!-- ======= Nav Section ======= -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <img src="/img/MspectreMark.svg" height="24" class="d-inline-block align-text-top">
-                SuperDog
-            </a>
+            <a class="navbar-brand" href="index.html"><img src="/img/MspectreMark.svg" alt="" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                SuperDog Events</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0 ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link" href="app.html">The App</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank"
-                            href="https://distracted-meitner-e31e0e.netlify.app">About</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/CoderFoundry/JS-SuperDogEvents">The Repo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://learn.coderfoundry.com">About</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- ======= Main Section ======= -->
+    <main id="content" class="flex-shrink-0">
+        <div class="container col-xxl-8 px-4">
+            <div class="row flex-lg-row-reverse">
+                <div class="col-12 col-lg-5 p-5 p-lg-0">
+                    <img src="/img/SuperDogEventsWebLogosmall.png" class="img-fluid"
+                        alt="App Logo" width="700" height="500" loading="lazy">
+                </div>
+                <div class="col col-lg-7">
+                    <h1 class="display-4 fw-bold">SuperDog Events</h1>
+                    <h2 class="text-uppercase">A Coding Challenge by Coder Foundry</h2>
+                    <h4 class="lead">SuperDog Events is an event company the produces comic cons. The marketing team has
+                        requested a
+                        site that displays stats from their events. You are given an array of event data to build a site.
+                    </h4>
+                    <p>
+                        <b>Given an array of objects of event data display the following:</b>
+                        <ul>
+                            <li>Total attendance by City</li>
 
-    <main class="flex-shrink-0">
-        <div class="container mt-5">
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col-6">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-danger">Pick a Location</button>
-                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="visually-hidden">Toggle Dropdown</span>
-                        </button>
-                        <div id="eventDropDown" class="dropdown-menu">
-                            <!-- Template for dropdown -->
+                            <li>Average Attendance by City</li>
+
+                            <li>Least attended event by City</li>
+
+                            <li>Most attended event by City</li>
+
+                            <li>Show these stats for All Events</li>
+
+                            <li>
+                                Extra Credit: Add the ability to add additional events. Store the events in local
+                                storage or a database.
+                            </li>
+                        </ul>
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <a type="button" class="btn btn-outline-dark btn-lg px-4 me-md-2" href="app.html">Try It
+                                    Out</a>
+                            </div>
+                            <h5 class="fw-bold mt-3">Technolgies Used </h5>
+                            <div class="d-flex">
+                                <div class="row row-cols-4">
+                                    <div class="col"><i class="fab fa-js-square fa-5x jsicon"></i></div>
+                                    <div class="col"><i class="fab fa-bootstrap fa-5x bsicon"></i></div>
+                                    <div class="col"><i class="fab fa-html5 fa-5x html5icon"></i></div>
+                                    <div class="col"><i class="fab fa-css3-alt fa-5x css3icon"></i></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <table class="table table-striped">
-                        <tr>
-                            <th colspan="2" id="statsHeader">Stats For All Events</th>
-                        </tr>
-                        <tr>
-                            <td>Total Attendance</td>
-                            <td id="total">100</td>
-                        </tr>
-                        <tr>
-                            <td>Average Attendance</td>
-                            <td id="average">100</td>
-                        </tr>
-                        <tr>
-                            <td>Most Attended</td>
-                            <td id="most">100</td>
-                        </tr>
-                        <tr>
-                            <td>Least Attended</td>
-                            <td id="least">100</td>
-                        </tr>
-                    </table>
-
-                </div>
-                <div class="col-6 order-first order-md-last">
-                    <img src="/img/APPNAMELogo.svg" class="img-fluid p-2">
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-secondary">Add Data</button>
-                </div>
-                <table class="table table-striped" id="eventData">
-                    <thead>
-                        <tr>
-                            <th>Event Name</th>
-                            <th>City</th>
-                            <th>State</th>
-                            <th>Attendance</th>
-                            <th>Event Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </main>
 
-    <footer class="footer mt-auto py-3 sticky-footer">
+    <!-- ======= Footer Section ======= -->
+    <footer class="footer mt-auto py-3 ">
         <div class="container-fluid">
-            <!-- mobile make it 1 column (stack it on tope of each other)...for large make it 3 cols -->
-            <div class="row row-cols-1 rows-cols-lg-3 gy-2">
-
-                <div class="col order-last order-lg-first">
-                    <div>
-                        <!-- using two spans in case we want to style them differently -->
-                        <span class="text-muted">&copy;2022</span><span> Anthony Hansen | tonyh1977@gmail.com</span>
-                    </div>
+            <div class="row row-cols-1 row-cols-lg-3 gy-2">
+                <div class="col text-light order-last order-lg-first ">
+                    <div><span class="text-muted">&copy2021</span> Mark Spectre | mspectre@moon.com</div>
                 </div>
-
-                <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
-                    <img src="/img/MarkSpectre_WhtLogo.svg" alt="anthony hansen logo" height="24">
+                <div class="col d-flex align-items-start justify-content-start justify-content-lg-center">
+                    <img src="/img/MarkSpectre_WhtLogo.svg" class="mt-2" alt="" height="24">
                 </div>
-
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
-                    <div class="row">
-                        <div class="col social">
-                            <a href="#">
-                                <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="col social">
-                            <a href="#">
-                                <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="col social">
-                            <a href="#">
-                                <i class="fab fa-twitter fa-2x" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="col social">
-                            <a href="#">
-                                <i class="fab fa-youtube fa-2x" aria-hidden="true"></i>
-                            </a>
-                        </div>
+                    <div class="row mt-2">
+                        <div class="col social"><a href="https://www.linkedin.com/company/coderfoundry"
+                                target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://github.com/CoderFoundry" target="_blank"><i
+                                    class="fab fa-github fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://twitter.com/CoderFoundry" target="_blank"><i
+                                    class="fab fa-twitter fa-2x"></i></a></div>
+                        <div class="col social"><a href="https://www.youtube.com/c/CoderFoundryBootcamp"
+                                target="_blank"><i class="fab fa-youtube fa-2x"></i></a></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+    </script>
 
-    <!-- ==================Modal Section============== -->
-    <div class="modal" id="addData">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Add a New Event</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <!-- Modal Body -->
-                <div class="modal-body">
-                    <form id="newEventForm">
-                        <div class="form-group">
-                            <label class="form-label" for="newEventName">Event Name</label>
-                            <input id="newEventName" type="text" class="form-control" placeholder="Event Name">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="newEventName">Event Name</label>
-                            <input id="newEventName" type="text" class="form-control" placeholder="City">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="newEventName">Event Name</label>
-                            <input id="newEventName" type="text" class="form-control" placeholder="Event Name">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="newEventName">Event Name</label>
-                            <input id="newEventName" type="text" class="form-control" placeholder="Event Name">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"
+        integrity="sha512-WkVkkoB31AoI9DAk6SEEEyacH9etQXKUov4JRRuM1Y681VsTq7jYgrRw06cbP6Io7kPsKx+tLFpH/HXZSZ2YEQ=="
+        crossorigin="anonymous">
+    </script>
 </body>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
-    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script src="/js/site.js"></script>
-
-<script>
-    document.getElementById("btnSubmit").addEventListener("cick", getValues2);
-</script>
-
-
 
 </html>
