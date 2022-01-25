@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: A JS PROJECT</title>
+    <title>SuperDog Events: A Coding Challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,10 +15,9 @@
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
 
-    <!-- custom css -->
+    <!-- custom css OUR CSS IS LISTED AFTER THE BOOTSTRAP LINK SO OUR'S WILL OVVERIDE...OR CAN JUST USE !IMPORTAANT KEYWORD INDIVIDUALLY-->
     <link rel="stylesheet" href="/css/site.css">
     <link rel="icon" type="image/png" href="img/favicon-32x32.png">
-
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -27,7 +26,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <img src="/img/MspectreMark.svg" height="24" class="d-inline-block align-text-top">
-                APP NAME
+                SuperDog
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,10 +35,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page">The App</a>
+                        <a class="nav-link" href="app.html">The App</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="code.html">The Code</a>
@@ -55,28 +54,87 @@
 
     <main class="flex-shrink-0">
         <div class="container mt-5">
-            <div>
-                <h1>APP UI WILL GO HERE</h1>
-                <input id="message" placeholder="Enter A Message">
-                <div class="p-2">
-                    <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col-6">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger">Pick a Location</button>
+                        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div id="eventDropDown" class="dropdown-menu">
+                            <!-- Template for dropdown -->
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                        <tr>
+                            <th colspan="2" id="statsHeader">Stats For All Events</th>
+                        </tr>
+                        <tr>
+                            <td>Total Attendance</td>
+                            <td id="total">100</td>
+                        </tr>
+                        <tr>
+                            <td>Average Attendance</td>
+                            <td id="average">100</td>
+                        </tr>
+                        <tr>
+                            <td>Most Attended</td>
+                            <td id="most">100</td>
+                        </tr>
+                        <tr>
+                            <td>Least Attended</td>
+                            <td id="least">100</td>
+                        </tr>
+                    </table>
+
                 </div>
+                <div class="col-6 order-first order-md-last">
+                    <img src="/img/APPNAMELogo.svg" class="img-fluid p-2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-secondary">Add Data</button>
+                </div>
+                <table class="table table-striped" id="eventData">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Attendance</th>
+                            <th>Event Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
+
     <footer class="footer mt-auto py-3 sticky-footer">
         <div class="container-fluid">
             <!-- mobile make it 1 column (stack it on tope of each other)...for large make it 3 cols -->
             <div class="row row-cols-1 rows-cols-lg-3 gy-2">
+
                 <div class="col order-last order-lg-first">
                     <div>
                         <!-- using two spans in case we want to style them differently -->
                         <span class="text-muted">&copy;2022</span><span> Anthony Hansen | tonyh1977@gmail.com</span>
                     </div>
                 </div>
+
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
                     <img src="/img/MarkSpectre_WhtLogo.svg" alt="anthony hansen logo" height="24">
                 </div>
+
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
                     <div class="row">
                         <div class="col social">
@@ -101,27 +159,61 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </footer>
+
+    <!-- ==================Modal Section============== -->
+    <div class="modal" id="addData">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Add a New Event</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form id="newEventForm">
+                        <div class="form-group">
+                            <label class="form-label" for="newEventName">Event Name</label>
+                            <input id="newEventName" type="text" class="form-control" placeholder="Event Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newEventName">Event Name</label>
+                            <input id="newEventName" type="text" class="form-control" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newEventName">Event Name</label>
+                            <input id="newEventName" type="text" class="form-control" placeholder="Event Name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="newEventName">Event Name</label>
+                            <input id="newEventName" type="text" class="form-control" placeholder="Event Name">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+</script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- sweet alert js -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/site.js"></script>
 
-
-    <!-- Custom Javascript...put your functions in site.js -->
-    <script src="/js/site.js"></script>
-
-    <script>
-        // look in this document and find an element called btnSubmit and add a listener
-        document.getElementById("btnSubmit").addEventListener("click", getMessage);
-    </script>
+<script>
+    document.getElementById("btnSubmit").addEventListener("cick", getValues2);
+</script>
 
 
 
